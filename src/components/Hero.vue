@@ -41,8 +41,10 @@ onUnmounted(() => clearInterval(roleTimer))
       <p class="eyebrow" v-reveal>{{ profile.tagline }}</p>
 
       <h1 class="hero-title" v-reveal:up="{ delay: 80 }">
-        Stories that<br />
-        <span class="text-gradient">move people.</span>
+        <span class="sr-only"
+          >Oluwadara Onanuga — Creative Director, Cinematographer &amp; Video Editor. </span
+        >
+        <span aria-hidden="true">Stories that<br /><span class="text-gradient">move people.</span></span>
       </h1>
 
       <div class="hero-role" v-reveal:up="{ delay: 180 }">

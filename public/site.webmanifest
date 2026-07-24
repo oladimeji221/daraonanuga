@@ -1,0 +1,12 @@
+{
+  "name": "Oluwadara Onanuga — Visual Storyteller",
+  "short_name": "Oluwadara",
+  "description": "Creative Director, Cinematographer & Video Editor.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0b0e",
+  "theme_color": "#0b0b0e",
+  "icons": [
+    { "src": "images/logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
