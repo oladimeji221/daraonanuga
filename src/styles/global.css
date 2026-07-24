@@ -1,0 +1,224 @@
+/* =========================================================================
+   Oluwadara Onanuga — Design System
+   A cinematic, dark, "alive" portfolio. Gold accent on near-black film grain.
+   ========================================================================= */
+
+:root {
+  /* Palette */
+  --bg: #0b0b0e;
+  --bg-2: #101015;
+  --surface: #16161d;
+  --surface-2: #1c1c25;
+  --line: rgba(255, 255, 255, 0.09);
+  --text: #f4f2ee;
+  --muted: #a7a5ad;
+  --muted-2: #74727c;
+  /* Monochrome accent (kept under the --gold-* names so the whole system swaps here).
+     Bright off-white highlight, pure-white gradient top, silver for depth. */
+  --gold: #f5f4f0;
+  --gold-soft: #ffffff;
+  --gold-deep: #8d8d95;
+  --on-accent: #0b0b0e; /* text/icons that sit on top of a white accent */
+
+  /* Type */
+  --font-display: 'Syne', 'Sora', system-ui, sans-serif;
+  --font-body: 'Sora', system-ui, -apple-system, sans-serif;
+
+  /* Rhythm */
+  --container: 1240px;
+  --radius: 18px;
+  --radius-lg: 26px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.1px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle film grain + vignette overlay across the whole page */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: screen;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--gold);
+  color: #000;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: #2a2a33;
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--gold-deep); }
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section {
+  position: relative;
+  padding-block: clamp(72px, 11vw, 160px);
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 22px;
+}
+.eyebrow::before {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+  color: var(--muted);
+  max-width: 60ch;
+  font-weight: 300;
+}
+
+.text-gold { color: var(--gold); }
+.text-gradient {
+  background: linear-gradient(120deg, var(--gold-soft), var(--gold), var(--gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease),
+    color 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  will-change: transform;
+}
+.btn:hover { transform: translateY(-3px); }
+
+.btn-gold {
+  background: linear-gradient(120deg, var(--gold-soft), var(--gold));
+  color: #0b0b0e;
+  box-shadow: 0 12px 34px -14px rgba(255, 255, 255, 0.28);
+}
+.btn-gold:hover { box-shadow: 0 18px 44px -14px rgba(255, 255, 255, 0.4); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ---------- Cards / surfaces ---------- */
+.surface {
+  background: linear-gradient(180deg, var(--surface), var(--bg-2));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+/* ---------- Reveal animation base ---------- */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  will-change: opacity, transform;
+}
+.reveal-up { transform: translateY(42px); }
+.reveal-left { transform: translateX(-46px); }
+.reveal-right { transform: translateX(46px); }
+.reveal-zoom { transform: scale(0.92); }
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---------- Utility ---------- */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+  border: 0;
+}

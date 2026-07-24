@@ -1,0 +1,19 @@
+{
+  "name": "oluwadara-onanuga",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio site for Oluwadara Onanuga — Creative Director & Visual Storyteller",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.7"
+  }
+}
