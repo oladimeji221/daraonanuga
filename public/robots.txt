@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oladimeji221.github.io/daraonanuga/sitemap.xml
+Sitemap: https://daraonanuga.com/sitemap.xml

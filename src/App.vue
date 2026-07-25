@@ -5,6 +5,7 @@ import Hero from './components/Hero.vue'
 import About from './components/About.vue'
 import Expertise from './components/Expertise.vue'
 import Portfolio from './components/Portfolio.vue'
+import Brands from './components/Brands.vue'
 import VideoBank from './components/VideoBank.vue'
 import Experience from './components/Experience.vue'
 import Contact from './components/Contact.vue'
@@ -65,6 +66,7 @@ onUnmounted(() => {
     <About />
     <Expertise />
     <Portfolio @open="openLightbox" />
+    <Brands />
     <VideoBank />
     <Experience />
     <Contact />

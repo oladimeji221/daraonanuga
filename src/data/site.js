@@ -133,20 +133,20 @@ export const courses = [
 
 // Photography grid. `size` controls the masonry span for visual rhythm.
 const photoMeta = [
-  { file: 'dara-05', title: 'On Set', cat: 'Behind the Scenes', size: 'wide' },
-  { file: 'dara-06', title: 'Golden Hour', cat: 'Events' },
+  { file: 'dara-01', title: 'On Set', cat: 'Behind the Scenes', size: 'wide' },
+  // { file: 'dara-06', title: 'Golden Hour', cat: 'Events' },
   { file: 'dara-07', title: 'The Delegation', cat: 'Events' },
-  { file: 'dara-08', title: 'Frame & Light', cat: 'Events', size: 'tall' },
+  // { file: 'dara-08', title: 'Frame & Light', cat: 'Events', size: 'tall' },
   { file: 'dara-09', title: 'In Conversation', cat: 'Events' },
-  { file: 'dara-10', title: 'The Stage', cat: 'Events', size: 'wide' },
+  // { file: 'dara-10', title: 'The Stage', cat: 'Events', size: 'wide' },
   { file: 'dara-11', title: 'Portrait', cat: 'Portrait' },
-  { file: 'dara-12', title: 'Details', cat: 'Events' },
+  // { file: 'dara-12', title: 'Details', cat: 'Events' },
   { file: 'dara-13', title: 'The Crowd', cat: 'Events' },
-  { file: 'dara-21', title: 'Studio', cat: 'Portrait', size: 'tall' },
+  // { file: 'dara-21', title: 'Studio', cat: 'Portrait', size: 'tall' },
   { file: 'dara-23', title: 'Coverage', cat: 'Events' },
   { file: 'dara-24', title: 'Backstage', cat: 'Behind the Scenes' },
-  { file: 'dara-14', title: 'Composition', cat: 'Events', size: 'wide' },
-  { file: 'dara-26', title: 'The Moment', cat: 'Portrait', size: 'tall' },
+  // { file: 'dara-14', title: 'Composition', cat: 'Events', size: 'wide' },
+  // { file: 'dara-26', title: 'The Moment', cat: 'Portrait', size: 'tall' },
   { file: 'dara-27', title: 'Ambience', cat: 'Events' },
   { file: 'dara-28', title: 'Motion', cat: 'Portrait' },
   { file: 'dara-29', title: 'Reflection', cat: 'Portrait' }
@@ -160,7 +160,7 @@ export const photos = photoMeta.map((p) => ({
 
 // Behind-the-scenes / about imagery
 export const aboutImages = {
-  primary: 'images/full/dara-01.jpg',
+  primary: 'images/full/dara-05.jpg',
   secondary: 'images/full/dara-03.jpg'
 }
 
@@ -170,6 +170,39 @@ export const heroImages = [
   'images/full/dara-25.jpg',
   'images/full/dara-10.jpg'
 ]
+
+// BRANDS — organisations & brands worked with. Logos land later:
+// drop each file into `public/images/brand/<slug>.(png|svg)` and it appears
+// automatically. Until then the tile shows the brand name.
+const brandMeta = [
+  { name: 'Phenom Communications', slug: 'phenom-communications' },
+  { name: 'Kenya Airways', slug: 'kenya-airways' },
+  { name: 'Royal Air Maroc', slug: 'royal-air-maroc' },
+  { name: 'Oludidit', slug: 'oludidit' },
+  { name: 'Kigali Inclusion Conference', slug: 'kigali-inclusion-conference' },
+  { name: 'FAAN', slug: 'faan' },
+  { name: 'Uganda Airlines', slug: 'uganda-airlines' },
+  { name: 'Tourist Culture Media', slug: 'tourist-culture-media' },
+  { name: 'The New London', slug: 'the-new-london' },
+  { name: 'NTA', slug: 'nta' },
+  { name: 'Medmatics Prisons Initiative', slug: 'medmatics-prisons-initiative' },
+  { name: 'The Afrikaans TV', slug: 'the-afrikaans-tv' },
+  { name: 'ToyDam Communications', slug: 'toydam-communications' },
+  { name: 'Trucks Transit Parks', slug: 'trucks-transit-parks' },
+  { name: 'Brooks & Blakes', slug: 'brooks-and-blakes' },
+  { name: 'BURN Stoves Nigeria Limited', slug: 'burn-stoves-nigeria' },
+  { name: 'DriveOne Media', slug: 'driveone-media' },
+  { name: 'AMVCA', slug: 'amvca' },
+  { name: 'Marriott Kigali', slug: 'marriott-kigali' },
+  { name: 'Four Points by Sheraton Kigali', slug: 'four-points-sheraton-kigali' },
+  { name: 'The Retreat Rwanda', slug: 'the-retreat-rwanda' },
+  { name: 'Morocco National Tourism Board (MNTO)', slug: 'morocco-national-tourism-board' }
+]
+
+export const brands = brandMeta.map((b) => ({
+  ...b,
+  logo: `images/brand/${b.slug}.png`
+}))
 
 // VIDEO BANK — placeholders. Replace `src` with a real MP4 URL or a
 // YouTube/Vimeo embed URL later, and set `type` to 'file' or 'embed'.

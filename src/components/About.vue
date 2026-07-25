@@ -11,9 +11,9 @@ import Icon from './Icon.vue'
         <figure class="about-img-primary">
           <img :src="aboutImages.primary" alt="Oluwadara Onanuga at work" loading="lazy" />
         </figure>
-        <figure class="about-img-secondary">
+        <!-- <figure class="about-img-secondary">
           <img :src="aboutImages.secondary" alt="On set" loading="lazy" />
-        </figure>
+        </figure> -->
         <div class="about-badge">
           <span class="about-badge-num">6+</span>
           <span class="about-badge-txt">years<br />in frame</span>
