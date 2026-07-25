@@ -23,6 +23,8 @@
   /* Type */
   --font-display: 'Syne', 'Sora', system-ui, sans-serif;
   --font-body: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-cine: 'Bebas Neue', 'Anton', 'Syne', sans-serif; /* tall condensed, film-poster */
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, monospace; /* camera HUD readouts */
 
   /* Rhythm */
   --container: 1240px;
