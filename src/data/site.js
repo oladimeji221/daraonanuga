@@ -196,7 +196,8 @@ const brandMeta = [
   { name: 'Marriott Kigali', slug: 'marriott-kigali' },
   { name: 'Four Points by Sheraton Kigali', slug: 'four-points-sheraton-kigali' },
   { name: 'The Retreat Rwanda', slug: 'the-retreat-rwanda' },
-  { name: 'Morocco National Tourism Board (MNTO)', slug: 'morocco-national-tourism-board' }
+  { name: 'Morocco National Tourism Board (MNTO)', slug: 'morocco-national-tourism-board' },
+  { name: 'Something About The Briggs', slug: 'something-about-the-briggs' }
 ]
 
 export const brands = brandMeta.map((b) => ({
