@@ -80,7 +80,14 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
-  padding: 18px 0;
+  padding: 16px 0;
+  /* Solid-black header fading to transparent so the menu always sits on black */
+  background: linear-gradient(
+    180deg,
+    rgba(5, 5, 8, 0.96) 0%,
+    rgba(5, 5, 8, 0.82) 48%,
+    rgba(5, 5, 8, 0) 100%
+  );
   transition: background 0.4s var(--ease), padding 0.4s var(--ease),
     border-color 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
   border-bottom: 1px solid transparent;

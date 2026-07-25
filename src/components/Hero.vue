@@ -57,8 +57,7 @@ onUnmounted(() => clearInterval(tcTimer))
       <div class="hero-scan"></div>
     </div>
 
-    <!-- Cinematic letterbox bars -->
-    <div class="bar bar-top"></div>
+    <!-- Cinematic letterbox bar -->
     <div class="bar bar-bottom"></div>
 
     <!-- Viewfinder corner brackets -->
@@ -138,7 +137,8 @@ onUnmounted(() => clearInterval(tcTimer))
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  padding-block: 120px 90px;
+  /* Extra top padding keeps the content clear of the fixed menu */
+  padding-block: clamp(170px, 22vh, 240px) 90px;
 }
 
 /* ---- Background ---- */
@@ -189,7 +189,6 @@ onUnmounted(() => clearInterval(tcTimer))
   background: #000;
   z-index: 4;
 }
-.bar-top { top: 0; transform: translateY(-100%); animation: barIn 1s var(--ease) 0.15s forwards; }
 .bar-bottom { bottom: 0; transform: translateY(100%); animation: barIn 1s var(--ease) 0.15s forwards; }
 @keyframes barIn { to { transform: translateY(0); } }
 
@@ -203,8 +202,8 @@ onUnmounted(() => clearInterval(tcTimer))
   opacity: 0;
   animation: vfIn 0.7s var(--ease) 0.9s forwards;
 }
-.vf-tl { top: 62px; left: 26px; border-right: 0; border-bottom: 0; }
-.vf-tr { top: 62px; right: 26px; border-left: 0; border-bottom: 0; }
+.vf-tl { top: 108px; left: 26px; border-right: 0; border-bottom: 0; }
+.vf-tr { top: 108px; right: 26px; border-left: 0; border-bottom: 0; }
 .vf-bl { bottom: 62px; left: 26px; border-right: 0; border-top: 0; }
 .vf-br { bottom: 62px; right: 26px; border-left: 0; border-top: 0; }
 @keyframes vfIn { to { opacity: 1; } }
@@ -224,8 +223,8 @@ onUnmounted(() => clearInterval(tcTimer))
   opacity: 0;
   animation: vfIn 0.7s var(--ease) 1.1s forwards;
 }
-.hud-tl { top: 76px; left: 74px; color: #ff4d4d; }
-.hud-tr { top: 76px; right: 74px; font-size: 0.8rem; color: #fff; }
+.hud-tl { top: 122px; left: 74px; color: #ff4d4d; }
+.hud-tr { top: 122px; right: 74px; font-size: 0.8rem; color: #fff; }
 .hud-bl { bottom: 76px; left: 74px; }
 .hud-br { bottom: 76px; right: 74px; }
 .rec-dot {
@@ -372,9 +371,9 @@ onUnmounted(() => clearInterval(tcTimer))
 @media (max-width: 700px) {
   .bar { height: 30px; }
   .vf { width: 24px; height: 24px; }
-  .vf-tl, .vf-tr { top: 46px; }
+  .vf-tl, .vf-tr { top: 88px; }
   .vf-bl, .vf-br { bottom: 46px; }
-  .hud-tl, .hud-tr { top: 58px; }
+  .hud-tl, .hud-tr { top: 100px; }
   .hud-bl, .hud-br { bottom: 58px; }
   .hud-tl { left: 58px; }
   .hud-tr { right: 58px; }
