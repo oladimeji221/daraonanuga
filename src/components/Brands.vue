@@ -16,7 +16,7 @@ function onError(slug) {
       <div class="head">
         <p class="eyebrow" v-reveal>Trusted by</p>
         <h2 class="section-title" v-reveal:up>
-          Brands &amp; <span class="text-gradient">Partners</span>
+          <span class="text-gradient">Brands</span>
         </h2>
         <p class="lead" v-reveal:up="{ delay: 100 }">
           Airlines, agencies, festivals and tourism boards I've directed, shot and
