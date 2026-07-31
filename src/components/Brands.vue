@@ -57,7 +57,7 @@ function onError(slug) {
   display: grid;
   place-items: center;
   aspect-ratio: 16 / 10;
-  padding: 22px;
+  padding: 12px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   background: var(--surface);
@@ -70,8 +70,9 @@ function onError(slug) {
   background: rgba(255, 255, 255, 0.02);
 }
 .blogo {
-  max-width: 100%;
-  max-height: 64px;
+  width: 100%;
+  height: 100%;
+  max-height: 100px;
   object-fit: contain;
   /* Logos often ship dark — lift them on the dark UI and warm on hover */
   filter: grayscale(1) brightness(1.7) contrast(0.9);
@@ -98,6 +99,8 @@ function onError(slug) {
 }
 @media (max-width: 560px) {
   .bgrid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .bcard { padding: 8px; }
+  .blogo { max-height: 84px; }
   .bname { font-size: 0.82rem; }
 }
 </style>

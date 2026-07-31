@@ -171,9 +171,8 @@ export const heroImages = [
   'images/full/dara-10.jpg'
 ]
 
-// BRANDS — organisations & brands worked with. Logos land later:
-// drop each file into `public/images/brand/<slug>.(png|svg)` and it appears
-// automatically. Until then the tile shows the brand name.
+// BRANDS — organisations & brands worked with. The numbered logo files follow
+// the display order below. If a logo is missing, the tile shows the brand name.
 const brandMeta = [
   { name: 'Phenom Communications', slug: 'phenom-communications' },
   { name: 'Kenya Airways', slug: 'kenya-airways' },
@@ -181,6 +180,7 @@ const brandMeta = [
   { name: 'Oludidit', slug: 'oludidit' },
   { name: 'Kigali Inclusion Conference', slug: 'kigali-inclusion-conference' },
   { name: 'FAAN', slug: 'faan' },
+  { name: 'FNAC', slug: 'fnac' },
   { name: 'Uganda Airlines', slug: 'uganda-airlines' },
   { name: 'Tourist Culture Media', slug: 'tourist-culture-media' },
   { name: 'The New London', slug: 'the-new-london' },
@@ -191,18 +191,21 @@ const brandMeta = [
   { name: 'Trucks Transit Parks', slug: 'trucks-transit-parks' },
   { name: 'Brooks & Blakes', slug: 'brooks-and-blakes' },
   { name: 'BURN Stoves Nigeria Limited', slug: 'burn-stoves-nigeria' },
-  { name: 'DriveOne Media', slug: 'driveone-media' },
   { name: 'AMVCA', slug: 'amvca' },
   { name: 'Marriott Kigali', slug: 'marriott-kigali' },
   { name: 'Four Points by Sheraton Kigali', slug: 'four-points-sheraton-kigali' },
   { name: 'The Retreat Rwanda', slug: 'the-retreat-rwanda' },
   { name: 'Morocco National Tourism Board (MNTO)', slug: 'morocco-national-tourism-board' },
-  { name: 'Something About The Briggs', slug: 'something-about-the-briggs' }
+  { name: 'Ubongo Kids', slug: 'ubongo-kids' },
+  { name: 'Easy247 Travels', slug: 'easy247-travels' },
+  { name: 'Purple Group', slug: 'purple-group' },
+  { name: 'Nazeef Homes', slug: 'nazeef-homes' },
+  { name: 'DriveOne Media', slug: 'driveone-media' }
 ]
 
-export const brands = brandMeta.map((b) => ({
+export const brands = brandMeta.map((b, index) => ({
   ...b,
-  logo: `images/brand/${b.slug}.png`
+  logo: `images/brand/${index + 1}.png`
 }))
 
 // VIDEO BANK — placeholders. Replace `src` with a real MP4 URL or a
