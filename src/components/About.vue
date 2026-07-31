@@ -1,6 +1,60 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 import { profile, stats, aboutImages } from '../data/site.js'
 import Icon from './Icon.vue'
+
+const statsEl = ref(null)
+const displayedStats = ref(stats.map((s) => `0${s.value.replace(/[\d.,]/g, '')}`))
+let observer
+let animationFrame
+let hasCounted = false
+
+function countUp() {
+  if (hasCounted) return
+  hasCounted = true
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    displayedStats.value = stats.map((s) => s.value)
+    return
+  }
+
+  const duration = 1500
+  const start = performance.now()
+
+  function animate(now) {
+    const progress = Math.min((now - start) / duration, 1)
+    const eased = 1 - Math.pow(1 - progress, 3)
+
+    displayedStats.value = stats.map((s) => {
+      const target = Number.parseFloat(s.value.replace(/[^\d.]/g, '')) || 0
+      const suffix = s.value.replace(/[\d.,]/g, '')
+      return `${Math.round(target * eased)}${suffix}`
+    })
+
+    if (progress < 1) animationFrame = requestAnimationFrame(animate)
+  }
+
+  animationFrame = requestAnimationFrame(animate)
+}
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        countUp()
+        observer.disconnect()
+      }
+    },
+    { threshold: 0.35 }
+  )
+
+  if (statsEl.value) observer.observe(statsEl.value)
+})
+
+onUnmounted(() => {
+  observer?.disconnect()
+  if (animationFrame) cancelAnimationFrame(animationFrame)
+})
 </script>
 
 <template>
@@ -47,9 +101,9 @@ import Icon from './Icon.vue'
 
     <!-- Stats -->
     <div class="container">
-      <div class="stats" v-reveal:up>
+      <div ref="statsEl" class="stats" v-reveal:up>
         <div class="stat" v-for="(s, i) in stats" :key="i">
-          <span class="stat-value text-gradient">{{ s.value }}</span>
+          <span class="stat-value text-gradient">{{ displayedStats[i] }}</span>
           <span class="stat-label">{{ s.label }}</span>
         </div>
       </div>

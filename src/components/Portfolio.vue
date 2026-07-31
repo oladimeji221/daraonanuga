@@ -22,13 +22,13 @@ function open(photo) {
 </script>
 
 <template>
-  <section id="work" class="section work">
+  <section id="gallery" class="section work">
     <div class="container">
       <div class="head">
         <div>
-          <p class="eyebrow" v-reveal>Selected work</p>
+          <p class="eyebrow" v-reveal>Selected moments</p>
           <h2 class="section-title" v-reveal:up>
-            The <span class="text-gradient">Portfolio</span>
+            The <span class="text-gradient">Gallery</span>
           </h2>
         </div>
         <p class="lead" v-reveal:up="{ delay: 100 }">

@@ -7,7 +7,7 @@ import Expertise from './components/Expertise.vue'
 import Portfolio from './components/Portfolio.vue'
 import Brands from './components/Brands.vue'
 import VideoBank from './components/VideoBank.vue'
-import Experience from './components/Experience.vue'
+// import Experience from './components/Experience.vue'
 import Contact from './components/Contact.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import Lightbox from './components/Lightbox.vue'
@@ -64,11 +64,11 @@ onUnmounted(() => {
   <main>
     <Hero @nav="nav" />
     <About />
+    <Brands />
     <Expertise />
     <Portfolio @open="openLightbox" />
-    <Brands />
     <VideoBank />
-    <Experience />
+    <!-- <Experience /> -->
     <Contact />
   </main>
 

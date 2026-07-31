@@ -17,8 +17,8 @@ export const profile = {
 
 export const stats = [
   { value: '6+', label: 'Years directing & shooting' },
-  { value: '80+', label: 'Stories shot & edited' },
-  { value: '12+', label: 'Brands & airlines served' },
+  { value: '100+', label: 'Stories shot & edited' },
+  { value: '20+', label: 'Brands & airlines served' },
   { value: '4', label: 'Countries filmed in' }
 ]
 

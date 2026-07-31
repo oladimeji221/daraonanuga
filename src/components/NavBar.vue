@@ -5,10 +5,10 @@ import { profile } from '../data/site.js'
 const links = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Work', href: '#work' },
   { label: 'Brands', href: '#brands' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Video Bank', href: '#videos' },
-  { label: 'Experience', href: '#experience' },
+  // { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' }
 ]
 

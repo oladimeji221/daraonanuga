@@ -104,8 +104,8 @@ onUnmounted(() => clearInterval(tcTimer))
       </p>
 
       <div class="hero-actions" v-reveal:up="{ delay: 420 }">
-        <a href="#work" class="btn btn-gold" @click.prevent="$emit('nav', '#work')">
-          View my work <Icon name="arrow" :size="18" />
+        <a href="#gallery" class="btn btn-gold" @click.prevent="$emit('nav', '#gallery')">
+          View gallery <Icon name="arrow" :size="18" />
         </a>
         <a href="#videos" class="btn btn-ghost" @click.prevent="$emit('nav', '#videos')">
           <Icon name="play" :size="18" /> Watch reel

@@ -74,9 +74,8 @@ function onError(slug) {
   height: 100%;
   max-height: 100px;
   object-fit: contain;
-  /* Logos often ship dark — lift them on the dark UI and warm on hover */
-  filter: grayscale(1) brightness(1.7) contrast(0.9);
-  opacity: 0.72;
+  filter: none;
+  opacity: 1;
   transition: filter 0.4s var(--ease), opacity 0.4s var(--ease);
 }
 .bcard:hover .blogo {
